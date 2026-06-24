@@ -111,14 +111,10 @@
         .cta-btn:active { transform: translateY(0); }
         .cta-btn .arrow {
             display: inline-block;
-            margin-left: 8px;
-            transition: transform 0.2s;
-        }
-        /* في RTL نعكس اتجاه السهم */
-        .cta-btn .arrow {
             margin-left: 0;
             margin-right: 8px;
             transform: scaleX(-1);
+            transition: transform 0.2s;
         }
         .cta-btn:hover .arrow { transform: scaleX(-1) translateX(-4px); }
         .features {
@@ -178,6 +174,47 @@
             color: #6f7d94;
         }
         .footer-company strong { color: #3d4e66; }
+
+        /* ===== 悬浮按钮 (仅手机显示) ===== */
+        .floating-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 20px;
+            z-index: 999;
+            background: #1a3a6b;
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 14px 28px;
+            border-radius: 60px;
+            text-decoration: none;
+            box-shadow: 0 6px 24px rgba(26,58,107,0.35);
+            transition: background 0.2s, transform 0.2s;
+            display: none; /* 默认隐藏，仅手机显示 */
+            letter-spacing: 0.3px;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            min-width: 140px;
+        }
+        .floating-btn:hover {
+            background: #102a50;
+            transform: scale(1.02);
+        }
+        .floating-btn:active {
+            transform: scale(0.97);
+        }
+
+        /* 在移动设备上显示悬浮按钮 */
+        @media (max-width: 640px) {
+            .floating-btn {
+                display: block;
+            }
+            body {
+                padding-bottom: 90px; /* 给悬浮按钮留空间 */
+            }
+        }
+
         @media (max-width: 640px) {
             body { padding: 0 12px; }
             .container { padding: 16px 0 24px; }
@@ -192,10 +229,24 @@
             .disclaimer { padding: 16px 18px 14px; }
             .disclaimer p { font-size: 0.7rem; }
             .footer { flex-direction: column; align-items: flex-start; gap: 6px; padding-top: 14px; }
+            .floating-btn {
+                font-size: 0.95rem;
+                padding: 12px 24px;
+                min-width: 120px;
+                right: 16px;
+                bottom: 20px;
+            }
         }
         @media (max-width: 380px) {
             .hero h1 { font-size: 1.3rem; }
             .cta-btn { font-size: 0.85rem; padding: 12px 20px; }
+            .floating-btn {
+                font-size: 0.85rem;
+                padding: 10px 20px;
+                min-width: 100px;
+                right: 12px;
+                bottom: 16px;
+            }
         }
     </style>
 </head>
@@ -217,10 +268,11 @@
                 وظروف السوق العامة. جميع المحتويات <strong>لأغراض تعليمية وإعلامية</strong> فقط.
             </p>
             <div class="cta-wrapper">
+                <!-- 主按钮：文案改为“加入社区”，链接改为 Google -->
                 <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" class="cta-btn">
-                    زيارة موقع الشريك <span class="arrow">→</span>
+                    انضم إلى المجتمع <span class="arrow">→</span>
                 </a>
-                <p style="font-size:0.75rem; color:#6f7d94; margin-top:8px;">ستغادر هذه الصفحة وتنتقل إلى qq.com</p>
+                <p style="font-size:0.75rem; color:#6f7d94; margin-top:8px;">ستغادر هذه الصفحة إلى google.com</p>
             </div>
         </section>
 
@@ -263,5 +315,10 @@
             </div>
         </footer>
     </div>
+
+    <!-- ===== 悬浮按钮 (仅手机显示) ===== -->
+    <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" class="floating-btn">
+        انضم إلى المجتمع
+    </a>
 </body>
 </html>
