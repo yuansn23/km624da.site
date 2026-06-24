@@ -22,7 +22,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: right; /* RTL النص */
+            text-align: right;
         }
         .container {
             max-width: 820px;
@@ -175,11 +175,12 @@
         }
         .footer-company strong { color: #3d4e66; }
 
-        /* ===== 悬浮按钮 (仅手机显示) ===== */
+        /* ===== 悬浮按钮 (仅手机显示，居中) ===== */
         .floating-btn {
             position: fixed;
             bottom: 24px;
-            right: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 999;
             background: #1a3a6b;
             color: #ffffff;
@@ -196,13 +197,14 @@
             cursor: pointer;
             text-align: center;
             min-width: 140px;
+            white-space: nowrap;
         }
         .floating-btn:hover {
             background: #102a50;
-            transform: scale(1.02);
+            transform: translateX(-50%) scale(1.02);
         }
         .floating-btn:active {
-            transform: scale(0.97);
+            transform: translateX(-50%) scale(0.97);
         }
 
         /* 在移动设备上显示悬浮按钮 */
@@ -233,8 +235,15 @@
                 font-size: 0.95rem;
                 padding: 12px 24px;
                 min-width: 120px;
-                right: 16px;
                 bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .floating-btn:hover {
+                transform: translateX(-50%) scale(1.02);
+            }
+            .floating-btn:active {
+                transform: translateX(-50%) scale(0.97);
             }
         }
         @media (max-width: 380px) {
@@ -244,7 +253,6 @@
                 font-size: 0.85rem;
                 padding: 10px 20px;
                 min-width: 100px;
-                right: 12px;
                 bottom: 16px;
             }
         }
@@ -268,7 +276,7 @@
                 وظروف السوق العامة. جميع المحتويات <strong>لأغراض تعليمية وإعلامية</strong> فقط.
             </p>
             <div class="cta-wrapper">
-                <!-- 主按钮：文案改为“加入社区”，链接改为 Google -->
+                <!-- 主按钮：文案为“加入社区”，链接为 Google -->
                 <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" class="cta-btn">
                     انضم إلى المجتمع <span class="arrow">→</span>
                 </a>
@@ -316,7 +324,7 @@
         </footer>
     </div>
 
-    <!-- ===== 悬浮按钮 (仅手机显示) ===== -->
+    <!-- ===== 悬浮按钮 (仅手机显示，居中) ===== -->
     <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" class="floating-btn">
         انضم إلى المجتمع
     </a>
