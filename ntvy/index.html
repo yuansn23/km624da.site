@@ -232,7 +232,6 @@ body::after{
    ============================================================ */
 .hero{
   position:relative;z-index:2;
-  min-height:100vh;min-height:100dvh;
   display:flex;flex-direction:column;justify-content:flex-start;
   padding:56px 16px 50px;
   overflow:hidden;
@@ -418,7 +417,7 @@ body::after{
 }
 .float-card-play svg{width:18px;height:18px;color:#06061A;margin-left:2px}
 
-/* Hero CTA button — Neon pulse */
+/* Hero CTA button */
 .hero-cta{
   display:flex;align-items:center;justify-content:center;gap:8px;
   width:100%;min-height:50px;
@@ -426,14 +425,9 @@ body::after{
   background:linear-gradient(135deg,var(--neon-cyan) 0%,#00B8D4 40%,var(--neon-purple) 100%);
   color:#06061A;font-size:0.9375rem;font-weight:700;letter-spacing:0.01em;
   white-space:nowrap;padding:0 16px;
-  box-shadow:0 0 30px var(--neon-cyan-glow),0 0 60px rgba(0,229,255,0.15),0 8px 32px rgba(0,0,0,0.4);
+  box-shadow:0 4px 20px rgba(0,0,0,0.3);
   transition:all 0.25s var(--ease-out);
   position:relative;overflow:hidden;z-index:3;
-  animation:ctaNeonPulse 2.5s ease-in-out infinite;
-}
-@keyframes ctaNeonPulse{
-  0%,100%{box-shadow:0 0 30px var(--neon-cyan-glow),0 0 60px rgba(0,229,255,0.15),0 8px 32px rgba(0,0,0,0.4)}
-  50%{box-shadow:0 0 50px rgba(0,229,255,0.5),0 0 100px rgba(0,229,255,0.2),0 0 20px rgba(180,77,255,0.3),0 8px 32px rgba(0,0,0,0.4)}
 }
 .hero-cta::before{
   content:'';position:absolute;inset:0;
@@ -895,14 +889,9 @@ body::after{
   color:#06061A;font-size:0.9375rem;font-weight:700;
   display:flex;align-items:center;justify-content:center;gap:8px;
   white-space:nowrap;padding:0 16px;
-  box-shadow:0 0 30px var(--neon-cyan-glow),0 8px 32px rgba(0,0,0,0.4);
+  box-shadow:0 4px 20px rgba(0,0,0,0.3);
   transition:all 0.2s var(--ease-out);
   letter-spacing:0.01em;
-  animation:btnPulse 3s ease-in-out infinite;
-}
-@keyframes btnPulse{
-  0%,100%{box-shadow:0 0 30px var(--neon-cyan-glow),0 8px 32px rgba(0,0,0,0.4)}
-  50%{box-shadow:0 0 50px rgba(0,229,255,0.5),0 0 80px rgba(0,229,255,0.15),0 8px 32px rgba(0,0,0,0.4)}
 }
 .float-bar-cta:active{transform:scale(0.96)}
 .float-bar-cta svg{width:20px;height:20px}
