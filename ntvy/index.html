@@ -233,14 +233,14 @@ body::after{
 .hero{
   position:relative;z-index:2;
   min-height:100vh;min-height:100dvh;
-  display:flex;flex-direction:column;justify-content:center;
-  padding:48px 16px 50px;
+  display:flex;flex-direction:column;justify-content:flex-start;
+  padding:56px 16px 50px;
   overflow:hidden;
 }
 
 /* ---- Hero Logo ---- */
 .hero-logo{
-  position:absolute;top:14px;left:16px;
+  position:absolute;top:12px;left:16px;
   height:32px;width:auto;z-index:20;
   filter:drop-shadow(0 0 8px rgba(0,229,255,0.4));
   background:rgba(6,6,26,0.7);
@@ -451,19 +451,6 @@ body::after{
 .hero-cta:active{transform:scale(0.97)}
 .hero-cta svg{width:20px;height:20px;flex-shrink:0;position:relative;z-index:3}
 .hero-cta span{position:relative;z-index:3}
-
-/* CTA glow ring */
-.cta-ring{
-  position:absolute;bottom:78px;left:50%;transform:translateX(-50%);
-  width:calc(100% - 32px);height:50px;border-radius:var(--radius-full);
-  border:1px solid rgba(0,229,255,0.2);
-  pointer-events:none;z-index:2;
-  animation:ringPulse 2.5s ease-in-out infinite;
-}
-@keyframes ringPulse{
-  0%,100%{opacity:0.3;transform:translateX(-50%) scale(1)}
-  50%{opacity:0.7;transform:translateX(-50%) scale(1.04)}
-}
 
 .hero-trust{
   text-align:center;margin-top:12px;
@@ -1000,7 +987,7 @@ body::after{
   <h1 class="hero-title">
     <span data-i18n="hero_title_a">Cinema in your</span> <span class="hl" data-i18n="hero_title_b">pocket</span>
   </h1>
-  <p class="hero-desc" data-i18n="hero_desc">Stream blockbusters, binge series, download for offline — all in stunning 4K HDR. No ads. Ever.</p>
+  <p class="hero-desc" data-i18n="hero_desc">Naija Wave TV — Stream blockbusters, binge series, download for offline — all in stunning 4K HDR. No ads. Ever.</p>
 
   <!-- Floating card visual -->
   <div class="hero-visual">
@@ -1032,7 +1019,7 @@ body::after{
       </div>
       <div>
         <div class="hero-badge-num">4.8★</div>
-        <div class="hero-badge-label" data-i18n="hero_stat2">App Store</div>
+        <div class="hero-badge-label" data-i18n="hero_stat2">User Rating</div>
       </div>
     </div>
     <div class="hero-badge">
@@ -1047,7 +1034,6 @@ body::after{
   </div>
 
   <!-- CTA -->
-  <div class="cta-ring"></div>
   <button class="hero-cta" onclick="k2()">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
     <span data-i18n="hero_cta">Download Free — Start Watching</span>
@@ -1481,9 +1467,9 @@ en:{
 hero_eyebrow:'#1 Entertainment App · 2026',
 hero_title_a:'Cinema in your',
 hero_title_b:'pocket',
-hero_desc:'Stream blockbusters, binge series, download for offline — all in stunning 4K HDR. No ads. Ever.',
+hero_desc:'Naija Wave TV — Stream blockbusters, binge series, download for offline — all in stunning 4K HDR. No ads. Ever.',
 hero_stat1:'Active Users',
-hero_stat2:'App Store',
+hero_stat2:'User Rating',
 hero_stat3:'Quality',
 hero_cta:'Download Free — Start Watching',
 scroll_hint:'Swipe',
@@ -1563,9 +1549,9 @@ es:{
 hero_eyebrow:'#1 App de Entretenimiento · 2026',
 hero_title_a:'Cine en tu',
 hero_title_b:'bolsillo',
-hero_desc:'Transmite blockbusters, series completas, descarga para ver sin conexión — todo en impresionante 4K HDR. Sin anuncios. Nunca.',
+hero_desc:'Naija Wave TV — Transmite blockbusters, series completas, descarga para ver sin conexión — todo en impresionante 4K HDR. Sin anuncios. Nunca.',
 hero_stat1:'Usuarios Activos',
-hero_stat2:'App Store',
+hero_stat2:'User Rating',
 hero_stat3:'Calidad',
 hero_cta:'Descargar Gratis — Comienza a Ver',
 scroll_hint:'Desliza',
