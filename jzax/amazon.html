@@ -7,8 +7,42 @@
     <script src="https://cdn.tailwindcss.com"></script>
 	
 	
-	
-<script>
+
+   
+	<script>
+!function(f,b,e,v,n,t,s) {
+    if(f.fbq) return;
+    n=f.fbq=function(){
+        n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments)
+    };
+    if(!f._fbq) f._fbq=n;
+    n.push=n;
+    n.loaded=!0;
+    n.version='2.0';
+    n.queue=[];
+
+    t=b.createElement(e);
+    t.async=!0;
+    t.src=v;
+    s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)
+}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+// 提取 URL 中的 fbid 参数
+function getQueryParam(param) {
+    var urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
+
+var fbid = getQueryParam('fbid');
+if (fbid) {
+    fbq('init', fbid);
+    fbq('track', 'PageView');
+}
+</script>
+
+
+	 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -17,31 +51,14 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-
-// 多 Pixel ID
-var PIXEL_IDS = [
-  '11111111111111',
-  '22222222222222',
-];
-
-// 去重
-PIXEL_IDS = Array.from(new Set(PIXEL_IDS));
-
-// 批量初始化
-PIXEL_IDS.forEach(function(id){
-  fbq('init', id);
-});
-
-// PageView
+fbq('init', '1608526056916699');
 fbq('track', 'PageView');
 </script>
-
-<noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=895671296611773&ev=PageView&noscript=1"/>
-</noscript>
-
-
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1608526056916699&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+	
 	<script>
 	function k2()
 	{ 
